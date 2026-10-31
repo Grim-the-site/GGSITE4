@@ -11,9 +11,9 @@ Official-looking independent creator hub for [Grim Gamer YT](https://www.youtube
 - Plain HTML/CSS/JS; no build process or credentials required
 
 ## Deployment
-Upload all files, including `assets/`, to the root of the `main` branch in `Grim-the-site/PUBREDME`. In Settings → Pages, select "Deploy from a branch", `main`, `/(root)`.
+Upload all files, including `assets/`, to the root of the `main` branch in `Grim-the-site/GGSITE4`. In Settings → Pages, select "Deploy from a branch", `main`, `/(root)`.
 
-Live URL: https://grim-the-site.github.io/PUBREDME/
+Live URL: https://grim-the-site.github.io/GGSITE4/
 
 ## Test locally
 `python -m http.server 8000` then visit `http://localhost:8000`.
