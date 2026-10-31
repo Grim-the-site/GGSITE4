@@ -1,17 +1,24 @@
-# GRIM GAMER — official channel hub (design prototype)
+# Grim Gamer YT — Official creator hub design
 
-A standalone GitHub Pages website for the [Grim Gamer YouTube channel](https://www.youtube.com/@grim-gamer-YT/featured). No DEXCORE settings or integrations.
+This GitHub Pages site uses the custom channel artwork supplied by the creator. It is independent of all other projects and contains no DEXCORE branding.
 
-## Content and design
+## Site
 
-Dark, crimson gaming brand treatment; original hand-drawn SVG grim emblem; featured navigation links to YouTube Videos, Shorts, Streams and Playlists; responsive mobile navigation; content filters; copy channel link; reduced-motion support. This is an original **interpretation** of the Grim Gamer name, not a pixel-perfect clone of the YouTube banner (which could not be inspected through the available public page fetch). Replace the emblem and refine the palette using actual channel artwork when available. No inaccurate view/subscriber counts or fabricated video previews are included.
+Published at https://grim-the-site.github.io/PUBREDME/
 
-## Deployment
+## Features
+- Grim Gamer YT YouTube banner and avatar featured on the homepage
+- Responsive black-and-crimson site with gaming and horror theme
+- Fast links to the creator's YouTube videos, Shorts, streams and playlists
+- Mobile navigation, accessible labels, reduced-motion support
+- Simple HTML, CSS, and vanilla JavaScript; no credentials or database
 
-GitHub Pages can publish `main` branch at `/(root)`. The files are plain HTML, CSS, JS and SVG. No build or dependencies required.
+## Files
+- `index.html` — page markup
+- `styles.css` — layout and design
+- `app.js` — navigation and content filters
+- `assets/grim-banner.jpg`, `assets/grim-avatar.jpg` — optimized creator-supplied channel art
+- `assets/grim-mark.svg` — older vector mark retained for compatibility
+- `site-config.json` — editable channel metadata
 
-Expected URL: https://grim-the-site.github.io/PUBREDME/
-
-## Local test
-
-Run `python -m http.server 8000` in this directory and open `http://localhost:8000`.
+GitHub Pages source: main branch, repository root.

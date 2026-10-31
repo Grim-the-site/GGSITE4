@@ -1,7 +1,8 @@
 {
-  "name": "GRIM GAMER",
-  "handle": "@grim-gamer-YT",
+  "name": "GRIM GAMER YT",
+  "tagline": "Join the Grim Squad",
+  "theme": "black-crimson",
   "youtube": "https://www.youtube.com/@grim-gamer-YT/featured",
-  "style": "grim-crimson",
-  "version": "1.0.0"
+  "banner": "assets/grim-banner.jpg",
+  "avatar": "assets/grim-avatar.jpg"
 }
