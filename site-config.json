@@ -1,8 +1,16 @@
 {
-  "name": "GRIM GAMER YT",
-  "tagline": "Join the Grim Squad",
-  "theme": "black-crimson",
-  "youtube": "https://www.youtube.com/@grim-gamer-YT/featured",
-  "banner": "assets/grim-banner.jpg",
-  "avatar": "assets/grim-avatar.jpg"
+  "site": "GRIM GAMER YT",
+  "tagline": "ENTER THE GRIM SIDE",
+  "palette": {
+    "background": "#070305",
+    "crimson": "#f41024",
+    "text": "#f5ecec"
+  },
+  "youtubeChannel": "https://www.youtube.com/@grim-gamer-YT/featured",
+  "artwork": {
+    "banner": "assets/grim-banner.webp",
+    "profile": "assets/grim-avatar.webp",
+    "source": "Original channel artwork supplied by owner"
+  },
+  "hosting": "GitHub Pages / Grim-the-site/PUBREDME"
 }

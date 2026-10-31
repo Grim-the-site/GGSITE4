@@ -1,80 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#090101">
-  <meta name="description" content="GRIM GAMER YT — Join the Grim Squad. The official creator hub for videos, gaming and streams.">
-  <meta property="og:title" content="GRIM GAMER YT | Join the Grim Squad">
-  <meta property="og:description" content="Official GRIM GAMER YT channel hub. Join the Grim Squad and explore gaming videos and more.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080305">
+  <meta name="description" content="GRIM GAMER YT — the official channel hub. Watch the videos, find Shorts and streams, and join the Grim Squad.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://grim-the-site.github.io/PUBREDME/assets/grim-banner.jpg">
+  <meta property="og:title" content="GRIM GAMER YT — Join the Grim Squad">
+  <meta property="og:description" content="Enter the Grim Side. Official creator hub for Grim Gamer YT.">
+  <meta property="og:image" content="https://grim-the-site.github.io/PUBREDME/assets/grim-banner.webp">
   <meta property="og:url" content="https://grim-the-site.github.io/PUBREDME/">
-  <title>GRIM GAMER YT — Join the Grim Squad</title>
-  <link rel="icon" type="image/svg+xml" href="assets/grim-avatar.jpg">
+  <title>GRIM GAMER YT | Enter the Grim Side</title>
+  <link rel="icon" href="assets/grim-avatar.webp" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script defer src="app.js"></script>
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <div class="ambient ambient-one" aria-hidden="true"></div><div class="ambient ambient-two" aria-hidden="true"></div>
-  <header class="topbar" id="top">
-    <div class="wrap nav-shell">
-      <a class="identity" href="#top" aria-label="Grim Gamer home">
-        <img class="brand-avatar" src="assets/grim-avatar.jpg" width="46" height="46" alt="Grim Gamer skull avatar">
-        <span class="identity-text">GRIM<span>GAMER YT</span><small>JOIN THE GRIM SQUAD</small></span>
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div id="scrollProgress" class="scroll-progress" aria-hidden="true"></div>
+  <header class="site-header" id="top">
+    <div class="shell header-inner">
+      <a class="brand" href="#home" aria-label="Grim Gamer YT — home">
+        <img src="assets/grim-avatar.webp" alt="" width="46" height="46">
+        <span class="brand-wordmark"><b>GRIM</b> <strong>GAMER</strong> <em>YT</em><small>OFFICIAL CHANNEL HUB</small></span>
       </a>
-      <nav class="desktop-nav" aria-label="Main navigation"><a href="#home" class="nav-active">HOME</a><a href="#content">CONTENT</a><a href="#about">ABOUT</a><a href="#community">COMMUNITY</a></nav>
-      <div class="nav-actions"><a class="subscribe-top" href="https://www.youtube.com/@grim-gamer-YT?sub_confirmation=1" target="_blank" rel="noopener noreferrer"><span class="yt-mark">▶</span> SUBSCRIBE <span aria-hidden="true">↗</span></a><button class="menu-btn" type="button" id="menuBtn" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation"><span></span><span></span><span></span></button></div>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="active" href="#home">HOME</a>
+        <a href="#watch">CONTENT</a>
+        <a href="#identity">THE GRIM SIDE</a>
+        <a href="#squad">GRIM SQUAD</a>
+      </nav>
+      <div class="header-actions">
+        <a class="button button-sub button-header" href="https://www.youtube.com/@grim-gamer-YT?sub_confirmation=1" rel="noopener noreferrer" target="_blank"><span class="play-icon">▶</span> SUBSCRIBE <span aria-hidden="true">↗</span></a>
+        <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
     </div>
-    <nav id="mobileNav" class="mobile-nav" aria-label="Mobile navigation" hidden><a href="#home">HOME</a><a href="#content">CONTENT</a><a href="#about">ABOUT</a><a href="#community">COMMUNITY</a><a class="mobile-sub" href="https://www.youtube.com/@grim-gamer-YT?sub_confirmation=1" target="_blank" rel="noopener noreferrer">SUBSCRIBE ON YOUTUBE ↗</a></nav>
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" hidden>
+      <a href="#home">HOME</a><a href="#watch">CONTENT</a><a href="#identity">THE GRIM SIDE</a><a href="#squad">GRIM SQUAD</a>
+      <a class="mobile-youtube" href="https://www.youtube.com/@grim-gamer-YT?sub_confirmation=1" rel="noopener noreferrer" target="_blank">SUBSCRIBE ON YOUTUBE ↗</a>
+    </nav>
   </header>
+
   <main id="main">
-    <section id="home" class="brand-banner wrap" aria-label="Grim Gamer official channel art">
-      <div class="brand-banner-frame">
-        <img src="assets/grim-banner.jpg" width="1600" height="640" fetchpriority="high" alt="Grim Gamer YT banner: red lightning, a hooded reaper and a headset-wearing skull around the GRIM GAMER YT logo">
+    <section class="masthead" id="home" aria-label="Official Grim Gamer YouTube artwork">
+      <div class="masthead-art">
+        <img src="assets/grim-banner.webp" width="1983" height="793" alt="Official Grim Gamer YT banner with a hooded reaper, red lightning, gothic castles, a headset-wearing skull, and the red and silver GRIM GAMER YT title" fetchpriority="high">
       </div>
-      <div class="brand-banner-bottom"><span><i class="live-pulse"></i> OFFICIAL GRIM GAMER YT SITE</span><span>WELCOME TO THE GRIM SIDE // 2026</span></div>
+      <div class="masthead-edge shell"><span class="signal"><span class="signal-dot"></span> OFFICIAL GRIM GAMER YT HUB</span><span class="edge-mark">WELCOME TO THE GRIM SIDE <span>///</span> EST. FOR THE SQUAD</span></div>
     </section>
 
-    <section class="hero grim-home wrap" aria-labelledby="hero-heading">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="live-pulse"></span> THE GRIM SQUAD HQ <span class="eyebrow-line"></span> ENTER IF YOU DARE</div>
-        <div class="hero-overline">RED LIGHTNING. DARK LEGENDS. REAL GAMING.</div>
-        <h1 id="hero-heading"><span class="text-hot">GRIM</span><br><span class="text-outline">GAMER</span> <span class="yt-sigil">YT</span></h1>
-        <p>Welcome to the darker side of gaming. From uploads to Shorts and streams, this is your place to follow <strong>GRIM GAMER YT</strong> and join the Grim Squad.</p>
-        <div class="hero-cta"><a class="btn btn-primary" href="https://www.youtube.com/@grim-gamer-YT?sub_confirmation=1" target="_blank" rel="noopener noreferrer"><span class="play-circle">▶</span> JOIN THE GRIM SQUAD <span class="btn-arrow">↗</span></a><a class="btn btn-outline" href="#content">EXPLORE THE CHANNEL <span class="btn-arrow">↓</span></a></div>
-        <div class="hero-foot"><span class="tiny-rule"></span><span>THE GRIM SIDE IS ONLY ONE CLICK AWAY.</span></div>
+    <section class="intro shell reveal" aria-labelledby="introHeading">
+      <div class="intro-brand">
+        <div class="intro-avatar"><img src="assets/grim-avatar.webp" alt="Original Grim Gamer YT hooded skull channel avatar" width="152" height="152"></div>
+        <div class="intro-headline"><div class="kicker"><i></i> THE DARK SIDE OF GAMING</div><h1 id="introHeading">WELCOME TO <span>THE GRIM SIDE.</span></h1><p>One home for the uploads, Shorts, streams, and everything Grim Gamer YT. Enter the channel. Join the squad.</p></div>
       </div>
-      <div class="hero-visual grim-avatar-art">
-        <div class="hero-halo"></div>
-        <img class="hero-avatar" src="assets/grim-avatar.jpg" width="520" height="520" alt="Official Grim Gamer YT reaper skull avatar">
-        <div class="hero-avatar-caption"><span>THE FACE OF THE GRIM SQUAD</span><strong>GRIM GAMER YT</strong></div>
-      </div>
+      <div class="intro-actions"><a class="button button-sub button-large" href="https://www.youtube.com/@grim-gamer-YT?sub_confirmation=1" target="_blank" rel="noopener noreferrer"><span class="play-icon">▶</span> JOIN THE GRIM SQUAD <span class="button-arrow">↗</span></a><a class="button button-ghost button-large" href="#watch">EXPLORE CONTENT <span class="button-arrow">↓</span></a></div>
     </section>
 
-    <div class="marquee" aria-label="Grim Gamer — gameplay, highlights, community"><div class="marquee-inner" aria-hidden="true"><span>PLAY HARD</span><i>✦</i><span>STAY GRIM</span><i>✦</i><span>WATCH THE CHAOS</span><i>✦</i><span>PLAY HARD</span><i>✦</i><span>STAY GRIM</span><i>✦</i><span>WATCH THE CHAOS</span><i>✦</i></div></div>
+    <div class="ticker" aria-label="Grim Gamer YT — gaming, uploads, and the Grim Squad"><div class="ticker-track" aria-hidden="true"><span>GRIM GAMER YT</span><b>✦</b><span>STAY GRIM</span><b>✦</b><span>JOIN THE SQUAD</span><b>✦</b><span>ENTER THE GRIM SIDE</span><b>✦</b><span>GRIM GAMER YT</span><b>✦</b><span>STAY GRIM</span><b>✦</b><span>JOIN THE SQUAD</span><b>✦</b><span>ENTER THE GRIM SIDE</span><b>✦</b></div></div>
 
-    <section class="content-section wrap section-pad" id="content">
-      <div class="section-head"><div><div class="section-label"><b>01</b> / THE CHANNEL</div><h2>THE <span>CONTENT</span> VAULT<span class="red-dot">.</span></h2></div><p>Your next click is a good one. Jump straight to the channel's videos, live streams and Shorts.</p></div>
-      <div class="filters" role="group" aria-label="Filter content"><button type="button" class="filter active" data-filter="all" aria-pressed="true">ALL CONTENT <span>04</span></button><button type="button" class="filter" data-filter="videos" aria-pressed="false">VIDEOS</button><button type="button" class="filter" data-filter="shorts" aria-pressed="false">SHORTS</button><button type="button" class="filter" data-filter="live" aria-pressed="false">LIVE</button></div>
-      <div class="content-grid">
-        <a class="content-card card-wide" data-type="videos" href="https://www.youtube.com/@grim-gamer-YT/videos" target="_blank" rel="noopener noreferrer"><div class="card-art art-videos"><div class="art-orb"></div><div class="art-lines"></div><div class="art-giant">PLAY</div><div class="card-art-tag">EPISODE ARCHIVE // 001</div><div class="art-red-mark">↗</div></div><div class="content-card-bottom"><div><span class="card-type">01 / YOUTUBE VIDEOS</span><h3>THE FULL EXPERIENCE</h3><p>Get into the full-length uploads.</p></div><span class="card-jump">↗</span></div></a>
-        <a class="content-card" data-type="shorts" href="https://www.youtube.com/@grim-gamer-YT/shorts" target="_blank" rel="noopener noreferrer"><div class="card-art art-shorts"><div class="shorts-spark">✳</div><span class="shorts-art-label">VERTICAL<br>VELOCITY</span><span class="art-small-tag">#SHORTS</span></div><div class="content-card-bottom"><div><span class="card-type">02 / QUICK HITS</span><h3>SHORTS & CLIPS</h3><p>Fast moments. Zero filler.</p></div><span class="card-jump">↗</span></div></a>
-        <a class="content-card" data-type="live" href="https://www.youtube.com/@grim-gamer-YT/streams" target="_blank" rel="noopener noreferrer"><div class="card-art art-live"><div class="art-live-rings"></div><span class="live-art-center">ON<br>AIR<span>.</span></span><span class="art-small-tag">STREAM ARCHIVE</span></div><div class="content-card-bottom"><div><span class="card-type">03 / STREAMS</span><h3>LIVE & REPLAYS</h3><p>Check for streams and past broadcasts.</p></div><span class="card-jump">↗</span></div></a>
-        <a class="content-card card-feature" data-type="videos" href="https://www.youtube.com/@grim-gamer-YT/playlists" target="_blank" rel="noopener noreferrer"><div class="card-art art-playlists"><div class="playlist-disc disc-1"></div><div class="playlist-disc disc-2"></div><div class="playlist-disc disc-3"></div><strong>REPLAY<br>REPEAT<span>.</span></strong><span class="art-small-tag">CURATED WATCHLISTS</span></div><div class="content-card-bottom"><div><span class="card-type">04 / COLLECTIONS</span><h3>PLAYLISTS</h3><p>Find more of what you love.</p></div><span class="card-jump">↗</span></div></a>
+    <section id="watch" class="content-section shell section-block" aria-labelledby="watchHeading">
+      <div class="section-top reveal"><div><div class="eyebrow"><span class="number">01</span> / YOUR NEXT WATCH</div><h2 id="watchHeading">THE <span>GRIM ARCHIVE</span><em>.</em></h2></div><p>Pick your portal. All links go directly to the official Grim Gamer YT channel, so you'll always find the real uploads.</p></div>
+      <div class="filters" role="group" aria-label="Choose content type"><button class="filter active" type="button" data-filter="all" aria-pressed="true">ALL <span>04</span></button><button class="filter" type="button" data-filter="videos" aria-pressed="false">VIDEOS</button><button class="filter" type="button" data-filter="shorts" aria-pressed="false">SHORTS</button><button class="filter" type="button" data-filter="live" aria-pressed="false">LIVE</button><button class="filter" type="button" data-filter="playlists" aria-pressed="false">PLAYLISTS</button></div>
+      <div class="card-grid">
+        <a class="portal-card portal-videos reveal" data-type="videos" href="https://www.youtube.com/@grim-gamer-YT/videos" target="_blank" rel="noopener noreferrer" aria-label="Open Grim Gamer YT videos on YouTube"><div class="portal-art"><img src="assets/grim-banner.webp" alt="" loading="lazy"><div class="portal-marker">01 / WATCH</div><span class="portal-big">VIDEOS</span><span class="portal-corner">↗</span></div><div class="portal-bottom"><div><span>FULL LENGTH UPLOADS</span><h3>WATCH THE LATEST</h3><p>Head to the main video archive.</p></div><div class="portal-link" aria-hidden="true">↗</div></div></a>
+        <a class="portal-card portal-shorts reveal" data-type="shorts" href="https://www.youtube.com/@grim-gamer-YT/shorts" target="_blank" rel="noopener noreferrer" aria-label="Open Grim Gamer YT Shorts on YouTube"><div class="portal-art"><img src="assets/grim-avatar.webp" alt="" loading="lazy"><div class="portal-marker">02 / QUICK HITS</div><span class="portal-big">SHORTS</span><span class="portal-corner">↗</span></div><div class="portal-bottom"><div><span>FAST & FEARLESS</span><h3>SHORTS & CLIPS</h3><p>All the action in a flash.</p></div><div class="portal-link" aria-hidden="true">↗</div></div></a>
+        <a class="portal-card portal-live reveal" data-type="live" href="https://www.youtube.com/@grim-gamer-YT/streams" target="_blank" rel="noopener noreferrer" aria-label="Open Grim Gamer YT livestreams and stream archive on YouTube"><div class="portal-art"><img src="assets/grim-banner.webp" alt="" loading="lazy"><div class="portal-marker">03 / BROADCASTS</div><span class="portal-big">STREAMS</span><span class="portal-corner">↗</span></div><div class="portal-bottom"><div><span>LIVE & REPLAYS</span><h3>THE STREAM VAULT</h3><p>Find broadcasts and replays.</p></div><div class="portal-link" aria-hidden="true">↗</div></div></a>
+        <a class="portal-card portal-playlists reveal" data-type="playlists" href="https://www.youtube.com/@grim-gamer-YT/playlists" target="_blank" rel="noopener noreferrer" aria-label="Open Grim Gamer YT playlists on YouTube"><div class="portal-art"><img src="assets/grim-avatar.webp" alt="" loading="lazy"><div class="portal-marker">04 / COLLECTIONS</div><span class="portal-big">PLAYLISTS</span><span class="portal-corner">↗</span></div><div class="portal-bottom"><div><span>THE COLLECTION</span><h3>KEEP WATCHING</h3><p>Dig into the playlists.</p></div><div class="portal-link" aria-hidden="true">↗</div></div></a>
       </div>
-      <p class="channel-note">These are channel navigation cards, not fabricated video previews. Each takes you directly to Grim Gamer YT on YouTube.</p>
+      <div class="archive-footer"><span><i></i> DIRECT LINKS TO THE OFFICIAL YOUTUBE CHANNEL</span><a href="https://www.youtube.com/@grim-gamer-YT/featured" rel="noopener noreferrer" target="_blank">OPEN CHANNEL <span aria-hidden="true">↗</span></a></div>
     </section>
 
-    <section class="manifesto" id="about"><div class="wrap manifesto-inner"><div class="manifesto-visual"><div class="manifesto-ring ring-1"></div><div class="manifesto-ring ring-2"></div><img src="assets/grim-avatar.jpg" width="300" height="300" alt="Grim Gamer skull emblem"><span>G / G</span></div><div class="manifesto-copy"><div class="section-label"><b>02</b> / THE IDENTITY</div><h2>BUILT FOR<br><em>THE BOLD.</em></h2><p>Forged in black, crimson and lightning, GRIM GAMER YT is a home for the Grim Squad. Explore the channel and catch new uploads straight from YouTube.</p><div class="manifesto-stats"><div><strong>01</strong><span>CREATOR</span></div><div><strong>∞</strong><span>MORE TO COME</span></div><div><strong>100%</strong><span>GAMING ENERGY</span></div></div><a href="https://www.youtube.com/@grim-gamer-YT/about" target="_blank" rel="noopener noreferrer" class="text-link">MEET THE CHANNEL <span>↗</span></a></div></div></section>
+    <section class="identity-section" id="identity" aria-labelledby="identityHeading"><div class="shell identity-grid"><div class="identity-portrait reveal"><div class="portrait-frame"><img src="assets/grim-avatar.webp" width="520" height="520" alt="Original Grim Gamer YT avatar: hooded skeletal gamer with red eyes and headset" loading="lazy"></div><div class="portrait-caption">THE ORIGINAL GRIM GAMER YT EMBLEM <span>✣</span> CHANNEL IDENTITY</div></div><div class="identity-copy reveal"><div class="eyebrow"><span class="number">02</span> / THE CHANNEL</div><h2 id="identityHeading">DARK BY DESIGN.<br><span>GRIM BY NATURE.</span></h2><p>Crimson lightning, skulls, chains, and a hooded reaper: the signature Grim Gamer YT world, now brought to the website using the actual channel artwork.</p><p>The games happen on YouTube. This is the hub that takes you there.</p><div class="identity-tags"><span>RED LIGHTNING</span><span>HORROR GAMING</span><span>THE GRIM SQUAD</span></div><a class="text-action" href="https://www.youtube.com/@grim-gamer-YT/about" rel="noopener noreferrer" target="_blank">ABOUT THE CHANNEL <span>↗</span></a></div></div></section>
 
-    <section class="community-section wrap section-pad" id="community"><div class="community-panel"><div class="community-hatch" aria-hidden="true"></div><div class="community-copy"><div class="section-label"><b>03</b> / JOIN THE SQUAD</div><h2>DON'T JUST WATCH.<br><span>BE PART OF IT.</span></h2><p>Head over to YouTube, subscribe and join the conversation. The next chapter starts with the community.</p><div class="community-actions"><a class="btn btn-white" href="https://www.youtube.com/@grim-gamer-YT?sub_confirmation=1" target="_blank" rel="noopener noreferrer">SUBSCRIBE ON YOUTUBE <span class="btn-arrow">↗</span></a><button type="button" class="btn btn-ghost" id="copyChannel">COPY CHANNEL LINK <span class="btn-arrow">⧉</span></button></div></div><div class="community-glyph" aria-hidden="true">GG<span>.</span></div></div></section>
+    <section class="community shell section-block" id="squad" aria-labelledby="squadHeading"><div class="community-stage reveal"><img src="assets/grim-banner.webp" alt="" loading="lazy"><div class="community-overlay"><div class="eyebrow"><span class="number">03</span> / COMMUNITY</div><h2 id="squadHeading">JOIN THE<br><span>GRIM SQUAD.</span></h2><p>Don't miss the next drop. Subscribe to Grim Gamer YT, explore the channel, and stay on the dark side of gaming.</p><div class="community-buttons"><a class="button button-sub button-large" href="https://www.youtube.com/@grim-gamer-YT?sub_confirmation=1" rel="noopener noreferrer" target="_blank"><span class="play-icon">▶</span> SUBSCRIBE NOW <span class="button-arrow">↗</span></a><button id="copyChannel" class="button button-ghost button-large" type="button">COPY CHANNEL LINK <span class="button-arrow">⧉</span></button></div></div></div></section>
   </main>
-  <footer class="site-footer"><div class="wrap footer-main"><a class="identity" href="#top"><img class="brand-avatar" src="assets/grim-avatar.jpg" width="43" height="43" alt="Grim Gamer skull avatar"><span class="identity-text">GRIM<span>GAMER YT</span><small>JOIN THE GRIM SQUAD</small></span></a><div class="footer-links"><a href="#home">HOME</a><a href="#content">CONTENT</a><a href="#about">ABOUT</a><a href="https://www.youtube.com/@grim-gamer-YT/featured" target="_blank" rel="noopener noreferrer">YOUTUBE ↗</a></div></div><div class="wrap footer-bottom"><span>© <span id="year"></span> GRIM GAMER YT. ALL RIGHTS RESERVED.</span><span>INDEPENDENT FAN-FACING CHANNEL HUB · NOT AFFILIATED WITH YOUTUBE.</span><a href="#top">BACK TO TOP ↑</a></div></footer>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <footer class="footer"><div class="shell footer-main"><div class="footer-brand"><img src="assets/grim-avatar.webp" alt="" width="60" height="60"><div><b><span>GRIM</span> GAMER <em>YT</em></b><small>THE GRIM SIDE NEVER SLEEPS.</small></div></div><div class="footer-nav"><a href="#home">HOME</a><a href="#watch">CONTENT</a><a href="#identity">ABOUT</a><a href="https://www.youtube.com/@grim-gamer-YT/featured" rel="noopener noreferrer" target="_blank">YOUTUBE ↗</a></div></div><div class="shell footer-fine"><span>© <span id="year">2026</span> GRIM GAMER YT. CHANNEL HUB.</span><span>ORIGINAL CHANNEL ARTWORK • INDEPENDENT WEBSITE</span><a href="#top">BACK TO TOP ↑</a></div></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
 </body>
 </html>

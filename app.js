@@ -1,28 +1,31 @@
 (()=>{'use strict';
-  const channel='https://www.youtube.com/@grim-gamer-YT/featured';
-  const menu=document.getElementById('menuBtn');
+  const YOUTUBE='https://www.youtube.com/@grim-gamer-YT/featured';
+  const menu=document.getElementById('menuToggle');
   const mobile=document.getElementById('mobileNav');
-  const navLinks=[...document.querySelectorAll('.desktop-nav a')];
-  const sections=[...document.querySelectorAll('main section[id]')];
-  const closeMenu=()=>{if(!menu||!mobile)return;mobile.hidden=true;menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open navigation')};
-  if(menu){menu.addEventListener('click',()=>{const show=mobile.hidden;mobile.hidden=!show;menu.setAttribute('aria-expanded',String(show));menu.setAttribute('aria-label',show?'Close navigation':'Open navigation')});}
-  mobile?.querySelectorAll('a').forEach(link=>link.addEventListener('click',closeMenu));
+  const closeMenu=()=>{if(!menu||!mobile)return;mobile.hidden=true;menu.setAttribute('aria-expanded','false');menu.setAttribute('aria-label','Open menu')};
+  menu?.addEventListener('click',()=>{const opened=mobile.hidden;mobile.hidden=!opened;menu.setAttribute('aria-expanded',String(opened));menu.setAttribute('aria-label',opened?'Close menu':'Open menu')});
+  mobile?.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
+  document.addEventListener('click',e=>{if(mobile&&!mobile.hidden&&!mobile.contains(e.target)&&!menu?.contains(e.target))closeMenu()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu()});
-  document.addEventListener('click',e=>{if(!mobile?.hidden&&!mobile.contains(e.target)&&!menu?.contains(e.target))closeMenu()});
-  const filters=[...document.querySelectorAll('[data-filter]')];
+  const tabs=[...document.querySelectorAll('[data-filter]')];
   const cards=[...document.querySelectorAll('[data-type]')];
-  filters.forEach(btn=>btn.addEventListener('click',()=>{
-    const type=btn.dataset.filter;
-    filters.forEach(filter=>{const selected=filter===btn;filter.classList.toggle('active',selected);filter.setAttribute('aria-pressed',String(selected))});
-    cards.forEach(card=>{card.hidden=type!=='all'&&card.dataset.type!==type});
-  }));
+  tabs.forEach(tab=>tab.addEventListener('click',()=>{const chosen=tab.dataset.filter;tabs.forEach(t=>{const selected=t===tab;t.classList.toggle('active',selected);t.setAttribute('aria-pressed',String(selected))});cards.forEach(card=>card.hidden=chosen!=='all'&&card.dataset.type!==chosen)}));
+  const sections=[...document.querySelectorAll('main section[id]')];
+  const nav=[...document.querySelectorAll('.desktop-nav a')];
+  const progress=document.getElementById('scrollProgress');
+  let ticking=false;
+  const updateScroll=()=>{ticking=false;const available=document.documentElement.scrollHeight-window.innerHeight;const pct=available>0?Math.min(100,Math.max(0,scrollY/available*100)):0;if(progress)progress.style.width=pct+'%'};
+  window.addEventListener('scroll',()=>{if(!ticking){ticking=true;requestAnimationFrame(updateScroll)}},{passive:true});updateScroll();
   const year=document.getElementById('year');if(year)year.textContent=String(new Date().getFullYear());
-  const toast=document.getElementById('toast');let timeout;
-  const tell=message=>{if(!toast)return;toast.textContent=message;toast.classList.add('shown');clearTimeout(timeout);timeout=setTimeout(()=>toast.classList.remove('shown'),2600)};
+  if('IntersectionObserver' in window){
+    const entryObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('in-view');entryObserver.unobserve(entry.target)}}),{threshold:.08});
+    document.querySelectorAll('.reveal').forEach(el=>entryObserver.observe(el));
+    const navObserver=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){nav.forEach(a=>a.classList.toggle('active',a.hash==='#'+e.target.id))}}),{rootMargin:'-28% 0px -60% 0px'});sections.forEach(el=>navObserver.observe(el));
+  }else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in-view'))}
+  const toast=document.getElementById('toast');let toastTimer;
+  const notify=text=>{if(!toast)return;toast.textContent=text;toast.classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('visible'),2300)};
   document.getElementById('copyChannel')?.addEventListener('click',async()=>{
-    try{await navigator.clipboard.writeText(channel);tell('CHANNEL LINK COPIED')}catch(err){
-      const input=document.createElement('textarea');input.value=channel;input.style.position='fixed';input.style.opacity='0';document.body.appendChild(input);input.select();try{document.execCommand('copy');tell('CHANNEL LINK COPIED')}catch(e){tell('OPEN THE CHANNEL TO COPY ITS LINK')}input.remove();
-    }
+    try{if(!navigator.clipboard?.writeText)throw new Error('Clipboard API unavailable');await navigator.clipboard.writeText(YOUTUBE);notify('CHANNEL LINK COPIED')}
+    catch{const field=document.createElement('textarea');field.value=YOUTUBE;field.style.cssText='position:fixed;opacity:0';document.body.appendChild(field);field.select();let result=false;try{result=document.execCommand('copy')}catch{}field.remove();notify(result?'CHANNEL LINK COPIED':'OPEN THE CHANNEL TO COPY THE LINK')}
   });
-  if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(!entry.isIntersecting)return;const active='#'+entry.target.id;navLinks.forEach(link=>link.classList.toggle('nav-active',link.getAttribute('href')===active))})},{rootMargin:'-30% 0px -60% 0px'});sections.forEach(section=>observer.observe(section))}
 })();
